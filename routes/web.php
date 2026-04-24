@@ -20,5 +20,33 @@ Route::get('/dersprogrami', function () {
 });
 
 Route::get('/admin', function () {
-    return view('admin.admin');
+    return view('admin.login');
+});
+
+Route::get('/dashboard', function () {
+    return view('admin.dashboard');
+});
+
+Route::get('/ayarlar', function () {
+    return view('admin.ayarlar');
+});
+
+Route::get('/aidatlar', function () {
+    return view('admin.aidatlar');
+});
+
+Route::get('/ogrenciler', function () {
+    return view('admin.ogrenciler');
+});
+
+Route::get('/siniflar', function () {
+    return view('admin.siniflar');
+});
+
+Route::get('/ders-programlari', function () {
+    return view('admin.ders-programlari');
+});
+
+Route::get('/duyurular-ve-haberler', function () {
+    return view('admin.duyurular-ve-haberler');
 });
