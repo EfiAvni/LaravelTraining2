@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etkinlikler</title>
+    <title>Login | Admin Panel</title>
 
     <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -20,183 +20,30 @@
             </style>
         @endif
 </head>
-<body class="font-[Oswald] text-black flex min-h-screen flex-col">
+<body class="bg-[#fafafa] font-[Oswald]">
 
-     <!-- Navbar -->     
-    <div class="pl-30 pt-2 pb-2 pr-30 fixed top-0 left-0 w-full z-50 border-b border-[#1ca49f] backdrop-blur-[2px] bg-black/50">
-        <nav class=" flex justify-between items-center">
-            <div class="flex items-center">
-                <img src="/images/logo.png" alt="cuma akıl logo" class="h-20 p-1">
-                <span class="text-xl font-bold ml-3">
-                    <span class="text-white">ŞEHİT CUMA AKIL</span>
-                    <span class="text-[#1ca49f]">ANADOLU İMAM HATİP LİSESİ</span>
-                </span>
-            </div>
-
-            <ul class="flex gap-5 text-sm font-medium lg:text-lg mr-5 text-white">
-                <li><a href="/" class="hover:text-[#1ca49f] transition">ANASAYFA</a></li>
-                <li><a href="/haberler" class="hover:text-[#1ca49f] transition">HABERLER & DUYURULAR</a></li>
-                <li><a href="/etkinlikler" class="text-[#1ca49f] hover:text-[#1ca49f] transition">ETKİNLİKLER</a></li>
-                <li><a href="/dersprogrami" class="hover:text-[#1ca49f] transition">DERS PROGRAMI</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <section class="bg-[#1a1a1d] text-white pt-40 pb-20 px-6 top-0 w-full">
-        <div class="max-w-7xl mx-auto text-center">
-            <p class="text-[#1ca49f] tracking-widest">GÜNCEL</p>
-            <h1 class="text-5xl font-bold mt-3">ETKİNLİKLER</h1>
-            <p class="mt-4 text-gray-300 max-w-2xl mx-auto">
-                Okulumuzda düzenlenecek etkinlikler ve projeler.
-            </p>
-        </div>
-    </section>
-
-    <div>
-        <div class="flex items-center justify-start mt-10 pl-30">
-            <h2 class="text-3xl font-bold text-[#1ca49f]">PLANLANAN & YAPILMIŞ ETKİNLİKLER</h2>
-        </div>
-    </div>
-
-    <div>
-        <div class="max-w-7xl mx-auto px-6 py-10">
-            <!-- Etkinlikler Tablosu -->
-            <div class="flex flex-col grid grid-cols-6 gap-8">
-                <div class="items-center justify-start">
-                    <h3 class="text-xl font-light text-black mb-4">ETKİNLİK ADI</h3>
-                </div>
-                <div class="items-center justify-start">
-                    <h3 class="text-xl font-light text-black mb-4">BİTİŞ TARİHİ</h3>
-                </div>
-                <div class="items-center justify-start">
-                    <h3 class="text-xl font-light text-black mb-4">ALAN</h3>
-                </div>
-                <div class="items-center justify-start">
-                    <h3 class="text-xl font-light text-black mb-4">SORUMLU ÖĞRETMEN</h3>
-                </div>
-                <div class="items-center justify-start">
-                    <h3 class="text-xl font-light text-black mb-4">KULÜP ADI</h3>
-                </div>
-                <div class="items-center justify-start">
-                    <h3 class="text-xl font-light text-black mb-4">AÇIKLAMA</h3>
-                </div>         
-            </div>
-
-            <hr>
-
-            <div class="flex flex-col grid grid-cols-6 gap-8 mt-5">
-                <div class="items-center justify-start">
-                    <h3 class="text-md font-light text-black mb-4">Etkinlik Adı</h3>
-                </div>
-                <div class="items-center justify-start">
-                    <h3 class="text-md font-light text-black mb-4">Bitiş Tarihi</h3>
-                </div>
-                <div class="items-center justify-start">
-                    <h3 class="text-md font-light text-black mb-4">Alan</h3>
-                </div>
-                <div class="items-center justify-start">
-                    <h3 class="text-md font-light text-black mb-4">Sorumlu Öğretmen</h3>
-                </div>
-                <div class="items-center justify-start">
-                    <h3 class="text-md font-light text-black mb-4">Kulüp Adı</h3>
-                </div>
-                <div class="items-center justify-start">
-                    <h3 class="text-md font-light text-black mb-4">Açıklama</h3>
-                </div>         
-            </div>            
-
-
-        </div>
-    </div>
-
-    <hr class="border-0 h-[5px] bg-[#1ca49f] my-6">
-
-    <!-- Contact Form -->
-
-    <div class="pl-30 pr-30 pb-10 items-center justify-center flex  justify-start items-start gap-15">
-        <div class="bg-black text-white p-10 border-l-10 border-[#1ca49f] ">
-
-            <div class="flex items-center justify-start mb-5">
-                <span class="mr-2 w-8 h-[1px] bg-[#1ca49f]"></span>
-                <h1 class="text-2xl font-medium">İLETİŞİM FORMU</h1>
-                <span class="ml-2 w-8 h-[1px] bg-[#1ca49f]"></span>
-            </div>
+    <div class="items-center justify-center flex flex-col min-h-screen">
+        <div class="border-t-3 border-red-500 rounded-3xl p-4 max-w-sm w-full mx-auto shadow-lg backdrop-blur-sm bg-black/[.05] items-center justify-center flex flex-col">
             
-            <div class="flex gap-5">
-                <input class="p-2 border w-52 " type="text" placeholder="Adınız Soyadınız*">
-                <input class="p-2 border w-60 " type="text" placeholder="Telefon Numaranız">
-            </div>
+            <img src="/har-teknoloji-logo.svg" alt="Küçükzade Logo" class="w-80 h-auto mx-auto mb-4">
+            <p class="items-center justify-center">YÖNETİM PANELİ</p>
 
-            <div class="flex flex-col">
-                <input class="p-2 border w-117 mt-5" type="text" placeholder="E-posta Adresiniz*">
-                <input class="p-2 border w-117 mt-5" type="text" placeholder="Konu*">
-                <textarea class="h-50 p-2 border w-117 mt-5 mb-5" placeholder="Mesajınız...*"></textarea>
-            </div>
+            <div class="items-center justify-start p-10 max-w-sm w-full mx-auto">
 
-            <button type="submit" class="bg-[#1ca49f] text-black px-6 py-3 hover:bg-gray-300 transition w-full">
-                GÖNDER
-            </button>
+                <p class="text-md font-light">Kullanıcı Adı</p>
+                <input class="mb-5 border-b-2 border-red-500 rounded-lg w-full p-3" type="text" placeholder="username"></input>
+
+                <p class="text-md font-light">Şifre</p>
+                <input class="mb-5 border-b-2 border-red-500 rounded-lg w-full p-3" type="password" placeholder="**************"></input>
+
+                <div class="items-center justify-center flex ">
+                    <button type="submit" class="border-b-2 border-black w-full bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg mt-4">Giriş Yap</button>
+                </div>
+            </div>
 
         </div>
-
-        <div class="items-start justify-start flex flex-col max-w-md ml-10">
-            <div class="flex flex-col items-start justify-start">
-                <img src="images/logo.png" alt="cuma akıl logo" class="w-52 h-0 h-auto object-cover mb-3">
-                <h1 class="text-[#1ca49f] text-2xl border-l-5 border-[#1ca49f] pl-3 leading-none inline-block mb-5">ŞEHİT CUMA AKIL ANADOLU İMAM HATİP LİSESİ</h1>
-                <p class="text-md font-light">Tesisiniz için en doğru mühendislik ve üretim çözümlerini sunmak adına yanınızdayız. Sorularınız ve üretim talepleriniz için bize ulaşın.</p>
-            </div>
-
-            <div class="space-y-4 items-start justify-start flex flex-col max-w-md mt-5">
-
-                <div class="flex items-center gap-3">
-                    <i class="fa-solid fa-phone text-[#1ca49f] text-xl"></i>
-                    <div>
-                        <h2>TELEFON</h2>
-                        <a href="tel:+90 (342) 472-0172" class="text-sm font-light hover:text-[#1ca49f]">+90 (342) 472-0172</a>
-                    </div>
-                </div>
-
-                <div class="flex items-center gap-3">
-                    <i class="fa-solid fa-envelope text-[#1ca49f] text-xl"></i>
-                    <div>
-                        <h2>E-POSTA</h2>
-                        <a href="mailto:info@scaaihl.meb.k12.tr" class="text-sm font-light hover:text-[#1ca49f]">info@scaaihl.meb.k12.tr</a>
-                    </div>
-                </div>
-
-                <div class="flex items-center gap-3">
-                    <i class="fa-solid fa-location-dot text-[#1ca49f] text-xl"></i>
-                    <div>
-                        <h2>ADRES</h2>
-                        <p class="text-sm font-light">KÜÇÜKKIZILHİSAR MAH. 104005 NOLU SK. ŞEHİT CUMA AKIL ANADOLU İMAM HATİP LİSESİ BLOK NO 12A İÇ KAPI NO 1 ŞAHİNBEY / GAZİANTEP</p>
-                    </div>
-                </div>
-
-                <div class="flex items-center gap-3">
-                    <i class="fa-brands fa-instagram text-[#1ca49f] text-xl"></i>
-                    <div>
-                        <h2>INSTAGRAM</h2>
-                        <a href="https://www.instagram.com/scaaihl/" target="_blank" class="text-sm font-light hover:text-[#1ca49f]">@scaaihl</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
     </div>
-
-    <!-- Footer -->
-    <footer class="bg-gray-600 text-white py-6 mt-auto">
-        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center text-sm font-light">
-
-            <p>&copy; 2026 Şehit Cuma Akıl Anadolu İmam Hatip Lisesi. Tüm hakları saklıdır.</p>
-
-            <a href="https://harteknoloji.com/" target="_blank" class="flex items-center">
-                <img src="har-teknoloji-logo.svg" alt="HAR Teknoloji" class="h-4 w-auto">
-            </a>
-
-        </div>
-    </footer>
+    
     
 </body>
 </html>

@@ -18,3 +18,7 @@ Route::get('/etkinlikler', function () {
 Route::get('/dersprogrami', function () {
     return view('dersprogrami');
 });
+
+Route::get('/admin', function () {
+    return view('admin.admin');
+});

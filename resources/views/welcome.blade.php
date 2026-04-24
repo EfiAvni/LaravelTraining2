@@ -231,19 +231,14 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-[#1a1a1d] text-white py-6 mt-auto">
+    <footer class="bg-gray-600 text-white py-6 mt-auto">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center text-sm font-light">
 
             <p>&copy; 2026 Şehit Cuma Akıl Anadolu İmam Hatip Lisesi. Tüm hakları saklıdır.</p>
 
-            <p>
-                Designed with <i class="fa-solid fa-heart text-red-500"></i>
-                by
-                <a href="https://www.kucukzadedijital.com" target="_blank"
-                class="text-[#d1c001] hover:underline">
-                Küçükzade Dijital
-                </a>
-            </p>
+            <a href="https://harteknoloji.com/" target="_blank" class="flex items-center">
+                <img src="har-teknoloji-logo.svg" alt="HAR Teknoloji" class="h-4 w-auto">
+            </a>
 
         </div>
     </footer>
