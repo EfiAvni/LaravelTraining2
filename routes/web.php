@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\SinifController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OgrenciController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -39,9 +42,8 @@ Route::get('/ogrenciler', function () {
     return view('admin.ogrenciler');
 });
 
-Route::get('/siniflar', function () {
-    return view('admin.siniflar');
-});
+Route::get('/siniflar', [SinifController::class, 'index'])
+    ->name('admin.siniflar');
 
 Route::get('/ders-programlari', function () {
     return view('admin.ders-programlari');
@@ -50,3 +52,9 @@ Route::get('/ders-programlari', function () {
 Route::get('/duyurular-ve-haberler', function () {
     return view('admin.duyurular-ve-haberler');
 });
+
+Route::post('/ogrenciler', [OgrenciController::class, 'store'])
+    ->name('ogrenciler.store');
+
+Route::post('/siniflar', [SinifController::class, 'store'])
+->name('siniflar.store');

@@ -22,12 +22,12 @@
     @endif
 
 </head>
-<body class="font-[Oswald]">
+<body class="font-[Oswald] bg-gray-200">
 
     <div class="flex items-start justify-start">
     <!-- Sidebar-->
         <div class="flex h-screen w-64">
-            <aside class="bg-white w-64 h-full p-4 border-r-2 rounded-2xl border-red-500">
+            <aside class="bg-white w-64 h-full p-4 border-r-2 rounded-2xl border-red-500 fixed">
                 <img src="har-teknoloji-logo.svg" alt="HAR Teknoloji Logo" class="p-2 border-b-2 border-red-500 mb-4 rounded-lg">
                 <nav class="flex flex-col space-y-4 p-2">
                     <div class="-ml-6 pl-6 flex items-center">
@@ -52,11 +52,11 @@
                         <i class="fa-solid fa-calendar-days mr-2 w-5 text-center text-red-500"></i>
                         <a href="/ders-programlari" class="text-gray-700 hover:text-red-500 font-semibold">Ders Programları</a>
                     </div>
-                    <div class="items-center justify-start flex">
+                    <div class="-ml-6 pl-6 flex items-center">
                         <i class="fa-solid fa-bell mr-2 w-5 text-center text-red-500"></i>
                         <a href="/duyurular-ve-haberler" class="text-gray-700 hover:text-red-500 font-semibold">Duyurular & Haberler</a>
                     </div>
-                    <div class="-ml-6 pl-6 border-l-3 border-red-500 flex items-center">
+                    <div class="-ml-6 pl-6 flex items-center border-l-3 border-red-500">
                         <i class="fa-solid fa-gear mr-2 w-5 text-center text-red-500"></i>
                         <a href="/ayarlar" class="text-gray-700 hover:text-red-500 font-semibold">Ayarlar</a>
                     </div>
@@ -64,32 +64,21 @@
             </aside>
         </div>
 
-        <div class=" items-start justify-start flex-1">
-            <header class="bg-gray-100 p-4 border-b-2 border-red-500 flex items-center w-full top-0 justify-between">
+        <div class="flex flex-col flex-1 mt-21">
+
+            <!-- Header -->
+            <header class="bg-gray-100 p-4 border-b-2 border-red-500 flex items-center top-0 justify-between fixed top-0 left-64 right-0 z-50">
                 <h1 class="text-xl font-bold text-gray-700">Yönetim Paneli</h1>
                 <button type="submit" class="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600">
                     Çıkış Yap
                 </button>
             </header>
 
-            <!-- Main Content -->
-            <div class="items-center justify-center grid grid-cols-4 border border-red-500 p-4 m-4 rounded-lg bg-white shadow-md">
-                <div class="p-4 m-2 bg-white rounded-lg shadow-md border border-red-500">
-                    <h2 class="text-lg font-semibold text-gray-700 mb-2">Toplam Öğrenci</h2>
-                    <p class="text-3xl font-bold text-red-500">120</p>
-                </div>
-                <div class="p-4 m-2 bg-white rounded-lg shadow-md border border-red-500">
-                    <h2 class="text-lg font-semibold text-gray-700 mb-2">Toplam Sınıf</h2>
-                    <p class="text-3xl font-bold text-red-500">8</p>
-                </div>
-                <div class="p-4 m-2 bg-white rounded-lg shadow-md border border-red-500">
-                    <h2 class="text-lg font-semibold text-gray-700 mb-2">Aidat Geliri</h2>
-                    <p class="text-3xl font-bold text-red-500">₺15,000</p>
-                </div>
-                <div class="p-4 m-2 bg-white rounded-lg shadow-md border border-red-500">
-                    <h2 class="text-lg font-semibold text-gray-700 mb-2">Duyurular</h2>
-                    <p class="text-3xl font-bold text-red-500">5</p>
+            <div class="items-center justify-center p-10 mt-20 flex">
+                <p >AYARLAR SAYFASI HENÜZ TASARLANMADI</p>
             </div>
+
+
 
         </div>
 

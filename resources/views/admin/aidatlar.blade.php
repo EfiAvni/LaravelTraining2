@@ -22,12 +22,12 @@
     @endif
 
 </head>
-<body class="font-[Oswald]">
+<body class="font-[Oswald] bg-gray-200">
 
     <div class="flex items-start justify-start">
     <!-- Sidebar-->
         <div class="flex h-screen w-64">
-            <aside class="bg-white w-64 h-full p-4 border-r-2 rounded-2xl border-red-500">
+            <aside class="bg-white w-64 h-full p-4 border-r-2 rounded-2xl border-red-500 fixed">
                 <img src="har-teknoloji-logo.svg" alt="HAR Teknoloji Logo" class="p-2 border-b-2 border-red-500 mb-4 rounded-lg">
                 <nav class="flex flex-col space-y-4 p-2">
                     <div class="-ml-6 pl-6 flex items-center">
@@ -36,19 +36,19 @@
                             Anasayfa
                         </a>
                     </div>
-                    <div class="-ml-6 pl-6 border-l-3 border-red-500 flex items-center">
+                    <div class="-ml-6 pl-6 flex items-center border-l-3 border-red-500">
                         <i class="fa-solid fa-money-bill-wave mr-2 w-5 text-center text-red-500"></i>
                         <a href="/aidatlar" class="text-gray-700 hover:text-red-500 font-semibold">Aidatlar</a>
                     </div>
-                    <div class="-ml-6 pl-6 flex items-center">
+                    <div class="items-center justify-start flex">
                         <i class="fa-solid fa-school mr-2 w-5 text-center text-red-500"></i>
                         <a href="/siniflar" class="text-gray-700 hover:text-red-500 font-semibold">Sınıflar</a>
                     </div>
-                    <div class="-ml-6 pl-6 flex items-center">
+                    <div class="items-center justify-start flex">
                         <i class="fa-solid fa-user-group mr-2 w-5 text-center text-red-500"></i>
                         <a href="/ogrenciler" class="text-gray-700 hover:text-red-500 font-semibold">Öğrenciler</a>
                     </div>
-                    <div class="-ml-6 pl-6 flex items-center">
+                    <div class="items-center justify-start flex">
                         <i class="fa-solid fa-calendar-days mr-2 w-5 text-center text-red-500"></i>
                         <a href="/ders-programlari" class="text-gray-700 hover:text-red-500 font-semibold">Ders Programları</a>
                     </div>
@@ -63,32 +63,176 @@
                 </nav>
             </aside>
         </div>
+        
+        <!-- Sağ Alan -->
+        <div class="flex flex-col flex-1 mt-21">
 
-        <div class=" items-start justify-start flex-1">
-            <header class="bg-gray-100 p-4 border-b-2 border-red-500 flex items-center w-full top-0 justify-between">
-                <h1 class="text-xl font-bold text-gray-700">Yönetim Paneli</h1>
-                <button type="submit" class="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600">
+            <!-- Header -->
+            <header class="bg-gray-100 p-4 border-b-2 border-red-500 flex items-center top-0 justify-between fixed top-0 left-64 right-0 z-50">
+
+                <div>
+                    <h1 class="text-xl font-bold text-gray-700">Aidatları Yönet</h1>
+                    <p class="text-gray-500 text-sm">Aidat bilgilerini yönetme ve düzenleme</p>
+                </div>
+
+                <button type="submit"
+                    class="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 transition">
                     Çıkış Yap
                 </button>
+
             </header>
 
-            <!-- Main Content -->
-            <div class="items-center justify-center grid grid-cols-4 border border-red-500 p-4 m-4 rounded-lg bg-white shadow-md">
-                <div class="p-4 m-2 bg-white rounded-lg shadow-md border border-red-500">
-                    <h2 class="text-lg font-semibold text-gray-700 mb-2">Toplam Öğrenci</h2>
-                    <p class="text-3xl font-bold text-red-500">120</p>
+            <!-- Durum Alanı -->
+            <div class="grid grid-cols-5 gap-4 mb-3 p-4">
+                <div class="bg-white border border-red-500 rounded-lg p-4 shadow">
+                    <h3 class="text-gray-500 text-sm">Toplam Aidat (Öğrenci)</h3>
+                    <p class="text-2xl font-bold text-gray-800">120</p>
                 </div>
-                <div class="p-4 m-2 bg-white rounded-lg shadow-md border border-red-500">
-                    <h2 class="text-lg font-semibold text-gray-700 mb-2">Toplam Sınıf</h2>
-                    <p class="text-3xl font-bold text-red-500">8</p>
+
+                <div class="bg-white border border-green-500 rounded-lg p-4 shadow">
+                    <h3 class="text-gray-500 text-sm">Ödenen</h3>
+                    <p class="text-2xl font-bold text-green-600">85</p>
                 </div>
-                <div class="p-4 m-2 bg-white rounded-lg shadow-md border border-red-500">
-                    <h2 class="text-lg font-semibold text-gray-700 mb-2">Aidat Geliri</h2>
-                    <p class="text-3xl font-bold text-red-500">₺15,000</p>
+
+                <div class="bg-white border border-yellow-500 rounded-lg p-4 shadow">
+                    <h3 class="text-gray-500 text-sm">Ödenmeyen</h3>
+                    <p class="text-2xl font-bold text-yellow-600">35</p>
                 </div>
-                <div class="p-4 m-2 bg-white rounded-lg shadow-md border border-red-500">
-                    <h2 class="text-lg font-semibold text-gray-700 mb-2">Duyurular</h2>
-                    <p class="text-3xl font-bold text-red-500">5</p>
+
+                <div class="bg-white border border-blue-500 rounded-lg p-4 shadow">
+                    <h3 class="text-gray-500 text-sm">Toplam Tahsilat</h3>
+                    <p class="text-2xl font-bold text-blue-600">₺127.500</p>
+                </div>
+
+                <div class="bg-white border border-red-500 rounded-lg p-4 shadow">
+                    <h3 class="text-gray-500 text-sm">Toplam Borç</h3>
+                    <p class="text-2xl font-bold text-gray-800">₺50.000</p>
+                </div>
+            </div>
+
+            <!-- Aidat Tanımlama Alanı-->
+            <div class="mr-4 ml-4 bg-white border border-red-500 rounded-lg shadow p-6 mb-6">
+
+                <h2 class="text-xl font-bold text-red-500 mb-4">
+                    YENİ AİDAT TANIMLA
+                </h2>
+
+                <div class="grid grid-cols-3 gap-4">
+
+                    <!-- Aidat Adı -->
+                    <div>
+                        <label class="block text-sm font-semibold mb-1">Aidat Adı</label>
+                        <input type="text"
+                            placeholder="Aidat adını giriniz"
+                            class="border rounded px-3 py-2 w-full">
+                    </div>
+
+                    <!-- Tutar -->
+                    <div>
+                        <label class="block text-sm font-semibold mb-1">Tutar</label>
+                        <input type="number"
+                            placeholder="Tutar giriniz"
+                            class="border rounded px-3 py-2 w-full">
+                    </div>
+
+                    <!-- Sınıf -->
+                    <div>
+                        <label class="block text-sm font-semibold mb-1">Sınıf</label>
+                        <select class="border rounded px-3 py-2 w-full">
+                            <option>Tüm Sınıflar</option>
+                            <option>9A</option>
+                            <option>10B</option>
+                        </select>
+                    </div>
+
+                    <!-- Başlangıç Tarihi -->
+                    <div>
+                        <label class="block text-sm font-semibold mb-1">Başlangıç Tarihi</label>
+                        <input type="date"
+                            class="border rounded px-3 py-2 w-full">
+                    </div>
+
+                    <!-- Son Ödeme Tarihi -->
+                    <div>
+                        <label class="block text-sm font-semibold mb-1">Son Ödeme Tarihi</label>
+                        <input type="date"
+                            class="border rounded px-3 py-2 w-full">
+                    </div>
+
+                    <!-- Açıklama -->
+                    <div>
+                        <label class="block text-sm font-semibold mb-1">Açıklama</label>
+                        <input type="text"
+                            placeholder="Açıklama giriniz"
+                            class="border rounded px-3 py-2 w-full">
+                    </div>
+
+                </div>
+
+                <div class="mt-4">
+                    <button class="bg-red-500 text-white px-5 py-2 rounded hover:bg-red-600 transition">
+                        Aidat Oluştur
+                    </button>
+                </div>
+
+            </div>
+            
+            <!-- Aidat Tablosu -->
+            <div class="ml-4 mr-4 bg-white border border-red-500 rounded-lg shadow overflow-hidden">
+
+                <h2 class="text-xl font-bold text-gray-700 mt-6 ml-6">
+                    Listelenen Aidatlar
+                </h2>
+
+                <div class="flex gap-3 p-6">
+                    
+                    <select class="border rounded px-3 py-2">
+                        <option>Tüm Durumlar</option>
+                        <option>Ödendi</option>
+                        <option>Ödenmedi</option>
+                    </select>
+
+                    <select class="border rounded px-3 py-2">
+                        <option>Tüm Sınıflar</option>
+                        <option>9A</option>
+                        <option>10B</option>
+                    </select>
+
+                    <input type="text" placeholder="Öğrenci ara..." class="border rounded px-3 py-2">
+                </div>
+            
+                <table class="w-full text-sm">
+                    <thead class="bg-red-500 text-white">
+                        <tr>
+                            <th class="px-4 py-3 text-left">Öğrenci</th>
+                            <th class="px-4 py-3 text-left">Sınıf</th>
+                            <th class="px-4 py-3 text-left">Aidat</th>
+                            <th class="px-4 py-3 text-left">Tutar</th>
+                            <th class="px-4 py-3 text-left">Durum</th>
+                            <th class="px-4 py-3 text-left">Ödeme Tarihi</th>
+                            <th class="px-4 py-3 text-center">İşlem</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="px-4 py-3">Ahmet Yılmaz</td>
+                            <td class="px-4 py-3">9A</td>
+                            <td class="px-4 py-3">Ocak Aidatı</td>
+                            <td class="px-4 py-3">₺1.500</td>
+                            <td class="px-4 py-3">
+                                <span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs">
+                                    Ödendi
+                                </span>
+                            </td>
+                            <td class="px-4 py-3">12.01.2026</td>
+                            <td class="px-4 py-3 text-center">
+                                <button class="bg-blue-500 text-white px-2 py-1 rounded">Ödendi</button>
+                                <button class="bg-red-500 text-white px-2 py-1 rounded">Ödenmedi</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
         </div>

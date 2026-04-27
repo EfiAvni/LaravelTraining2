@@ -22,12 +22,13 @@
     @endif
 
 </head>
-<body class="font-[Oswald]">
+<body class="font-[Oswald] bg-gray-200">
 
-    <div class="flex items-start justify-start">
+    <div class="flex h-screen">
+
     <!-- Sidebar-->
         <div class="flex h-screen w-64">
-            <aside class="bg-white w-64 h-full p-4 border-r-2 rounded-2xl border-red-500">
+            <aside class="bg-white w-64 h-full p-4 border-r-2 rounded-2xl border-red-500 fixed">
                 <img src="har-teknoloji-logo.svg" alt="HAR Teknoloji Logo" class="p-2 border-b-2 border-red-500 mb-4 rounded-lg">
                 <nav class="flex flex-col space-y-4 p-2">
                     <div class="-ml-6 pl-6 flex items-center">
@@ -40,15 +41,15 @@
                         <i class="fa-solid fa-money-bill-wave mr-2 w-5 text-center text-red-500"></i>
                         <a href="/aidatlar" class="text-gray-700 hover:text-red-500 font-semibold">Aidatlar</a>
                     </div>
-                    <div class="-ml-6 pl-6 border-l-3 border-red-500 flex items-center">
+                    <div class="-ml-6 pl-6 flex items-center border-l-3 border-red-500">
                         <i class="fa-solid fa-school mr-2 w-5 text-center text-red-500"></i>
                         <a href="/siniflar" class="text-gray-700 hover:text-red-500 font-semibold">Sınıflar</a>
                     </div>
-                    <div class="-ml-6 pl-6 flex items-center">
+                    <div class="items-center justify-start flex">
                         <i class="fa-solid fa-user-group mr-2 w-5 text-center text-red-500"></i>
                         <a href="/ogrenciler" class="text-gray-700 hover:text-red-500 font-semibold">Öğrenciler</a>
                     </div>
-                    <div class="-ml-6 pl-6 flex items-center">
+                    <div class="items-center justify-start flex">
                         <i class="fa-solid fa-calendar-days mr-2 w-5 text-center text-red-500"></i>
                         <a href="/ders-programlari" class="text-gray-700 hover:text-red-500 font-semibold">Ders Programları</a>
                     </div>
@@ -64,37 +65,211 @@
             </aside>
         </div>
 
-        <div class=" items-start justify-start flex-1">
-            <header class="bg-gray-100 p-4 border-b-2 border-red-500 flex items-center w-full top-0 justify-between">
-                <h1 class="text-xl font-bold text-gray-700">Yönetim Paneli</h1>
-                <button type="submit" class="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600">
+
+        <!-- Sağ Alan -->
+        <div class="flex flex-col flex-1 mt-21">
+
+            <!-- Header -->
+            <header class="bg-gray-100 p-4 border-b-2 border-red-500 flex items-center top-0 justify-between fixed top-0 left-64 right-0 z-50">
+
+                <div>
+                    <h1 class="text-xl font-bold text-gray-700">Sınıfları Yönet</h1>
+                    <p class="text-gray-500 text-sm">Sınıflara ait bilgileri yönetme ve düzenleme</p>
+                </div>
+
+                <button type="submit"
+                    class="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 transition">
                     Çıkış Yap
                 </button>
+
             </header>
 
             <!-- Main Content -->
-            <div class="items-center justify-center grid grid-cols-4 border border-red-500 p-4 m-4 rounded-lg bg-white shadow-md">
-                <div class="p-4 m-2 bg-white rounded-lg shadow-md border border-red-500">
-                    <h2 class="text-lg font-semibold text-gray-700 mb-2">Toplam Öğrenci</h2>
-                    <p class="text-3xl font-bold text-red-500">120</p>
+            <div class="p-4 grid grid-cols-2 gap-4">
+
+                <!-- Sınıf Ekle -->
+                <div class="bg-white border  border-red-500 rounded-lg shadow-md p-6 flex flex-col">
+                    <h1 class="font-bold text-xl mb-2 text-red-500">SINIF EKLE</h1>
+                    <form action="{{ route('siniflar.store') }}" method="POST">
+                        @csrf
+
+                        @if (session('success'))
+                            <div class="bg-green-100 text-green-700 p-3 rounded mb-4">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+
+                        <div class="flex grid grid-cols-2 gap-4">
+                            <div class="mb-4">
+                                <label for="rehber_ogretmen" class="block text-gray-700 font-semibold">Rehber Öğretmen</label>
+                                <input placeholder="Rehber öğretmen adını giriniz" type="text" id="rehber_ogretmen" name="rehber_ogretmen" class="border rounded px-3 py-2 w-full">
+                            </div>
+                        </div>
+                        <div class="flex grid grid-cols-2 gap-4">
+                            <div class="mb-4">
+                                <label for="seviye" class="block text-gray-700 font-semibold">Seviye</label>
+                                <select name="seviye" id="seviye" class="border rounded px-3 py-2 w-full">
+                                    <option value="">Seviye Seçiniz</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label for="sube" class="block text-gray-700 font-semibold">Şube</label>
+                                <select name="sube" id="sube" class="border rounded px-3 py-2 w-full">
+                                    <option value="">Şube Seçiniz</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                    <option value="F">F</option>
+                                    <option value="G">G</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-4 grid grid-cols-1">
+                            <label for="aciklama" class="block text-gray-700 font-semibold">Açıklama</label>
+                            <input placeholder="Açıklamayı giriniz" type="text" id="aciklama" name="aciklama" class="border rounded px-3 py-2 w-full">
+                        </div>
+                        
+                        <button type="submit" class="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600">
+                            Sınıf Ekle
+                        </button>
+                    </form>
                 </div>
-                <div class="p-4 m-2 bg-white rounded-lg shadow-md border border-red-500">
-                    <h2 class="text-lg font-semibold text-gray-700 mb-2">Toplam Sınıf</h2>
-                    <p class="text-3xl font-bold text-red-500">8</p>
+
+                <!-- Sınıf Güncelle -->
+                <div class="bg-white border  border-red-500 rounded-lg shadow-md p-6 flex flex-col">
+                    <h1 class="font-bold text-xl mb-2 text-red-500">SINIF GÜNCELLE</h1>
+                    <form action="/siniflar" method="POST">
+                        @csrf
+                        <div class="flex grid grid-cols-2 gap-4">
+                            <div class="mb-4">
+                                <label for="sinif_adi" class="block text-gray-700 font-semibold">Sınıf Adı</label>
+                                <input placeholder="Sınıf adını giriniz" type="text" id="sinif_adi" name="sinif_adi" class="border rounded px-3 py-2 w-full">
+                            </div>
+                            <div class="mb-4">
+                                <label for="rehber_ogretmen" class="block text-gray-700 font-semibold">Rehber Öğretmen</label>
+                                <input placeholder="Rehber öğretmen adını giriniz" type="text" id="rehber_ogretmen" name="rehber_ogretmen" class="border rounded px-3 py-2 w-full">
+                            </div>
+                        </div>
+                        <div class="flex grid grid-cols-2 gap-4">
+                            <div class="mb-4">
+                                <label for="seviye" class="block text-gray-700 font-semibold">Seviye</label>
+                                <input placeholder="Seviyeyi giriniz" type="text" id="seviye" name="seviye" class="border rounded px-3 py-2 w-full">
+                            </div>
+                            <div class="mb-4">
+                                <label for="sube" class="block text-gray-700 font-semibold">Şube</label>
+                                <input placeholder="Şubeyi giriniz" type="text" id="sube" name="sube" class="border rounded px-3 py-2 w-full">
+                            </div>
+                        </div>
+                        <div class="mb-4 grid grid-cols-1">
+                            <label for="aciklama" class="block text-gray-700 font-semibold">Açıklama</label>
+                            <input placeholder="Açıklamayı giriniz" type="text" id="aciklama" name="aciklama" class="border rounded px-3 py-2 w-full">
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="mb-6">
+                                    <label for="sinif_adi" class="block text-gray-700 font-semibold">Sınıf Seç</label>
+                                    <select name="sinif_sec" id="sinif_sec" class="border rounded px-3 py-2 w-full">
+                                        <option value="1">12-A</option>
+                                        <option value="2">12-B</option>
+                                        <option value="3">12-C</option>
+                                        <option value="4">12-D</option>
+                                    </select>
+                            </div>
+                            <button type="submit" class="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600">
+                                Sınıf Güncelle
+                            </button>
+                        </div>
+                        
+
+                    </form>
                 </div>
-                <div class="p-4 m-2 bg-white rounded-lg shadow-md border border-red-500">
-                    <h2 class="text-lg font-semibold text-gray-700 mb-2">Aidat Geliri</h2>
-                    <p class="text-3xl font-bold text-red-500">₺15,000</p>
+
+            </div>
+
+            <!-- Sınıfları Listele -->
+            <div class="ml-4 mr-4 bg-white border border-red-500 rounded-lg shadow overflow-hidden">
+
+                <h2 class="text-xl font-bold text-red-500 mt-6 ml-6">
+                    SINIFLARI LİSTELE
+                </h2>
+
+                <div class="flex gap-3 p-6">
+                    
+                    <select class="border rounded px-3 py-2">
+                        <option>Tüm Seviyeler</option>
+                        <option>9</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                    </select>
+
+                    <select class="border rounded px-3 py-2">
+                        <option>Tüm Şubeler</option>
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                        <option>E</option>
+                        <option>F</option>
+                        <option>G</option>
+                        <option>H</option>
+                    </select>
+
                 </div>
-                <div class="p-4 m-2 bg-white rounded-lg shadow-md border border-red-500">
-                    <h2 class="text-lg font-semibold text-gray-700 mb-2">Duyurular</h2>
-                    <p class="text-3xl font-bold text-red-500">5</p>
+            
+                <table class="w-full text-sm">
+                    <thead class="bg-red-500 text-white">
+                        <tr>
+                            <th class="px-4 py-3 text-left">Sınıf Adı</th>
+                            <th class="px-4 py-3 text-left">Seviye</th>
+                            <th class="px-4 py-3 text-left">Şube</th>
+                            <th class="px-4 py-3 text-left">Rehber Öğretmen</th>
+                            <th class="px-4 py-3 text-left">Açıklama</th>
+                            <th class="px-4 py-3 text-left">Öğrenci Sayısı</th>
+                            <th class="px-4 py-3 text-left">Durum</th>
+                            <th class="px-4 py-3 text-center">İşlem</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach ($siniflar as $sinif)
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="px-4 py-3">{{ $sinif->sinif_adi }}</td>
+                                <td class="px-4 py-3">{{ $sinif->seviye }}</td>
+                                <td class="px-4 py-3">{{ $sinif->sube }}</td>
+                                <td class="px-4 py-3">{{ $sinif->rehber_ogretmen }}</td>
+                                <td class="px-4 py-3">{{ $sinif->aciklama }}</td>
+                                <td class="px-4 py-3">{{ $sinif->ogrenci_sayisi }}</td>
+                                <td class="px-4 py-3">
+                                    @if ($sinif->durum == 1)
+                                        <span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs">
+                                            Aktif
+                                        </span>
+                                    @else
+                                        <span class="bg-red-100 text-red-700 px-2 py-1 rounded text-xs">
+                                            Pasif
+                                        </span>
+                                    @endif
+                                </td>
+                                <td class="px-4 py-3 text-center">
+                                    <button class="bg-blue-500 text-white px-2 py-1 rounded">Düzenle</button>
+                                    <button class="bg-red-500 text-white px-2 py-1 rounded">Sil</button>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
 
         </div>
 
     </div>
 
-    
 </body>
 </html>

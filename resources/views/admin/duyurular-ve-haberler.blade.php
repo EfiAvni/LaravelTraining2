@@ -22,12 +22,12 @@
     @endif
 
 </head>
-<body class="font-[Oswald]">
+<body class="font-[Oswald] bg-gray-200">
 
     <div class="flex items-start justify-start">
     <!-- Sidebar-->
         <div class="flex h-screen w-64">
-            <aside class="bg-white w-64 h-full p-4 border-r-2 rounded-2xl border-red-500">
+            <aside class="bg-white w-64 h-full p-4 border-r-2 rounded-2xl border-red-500 fixed">
                 <img src="har-teknoloji-logo.svg" alt="HAR Teknoloji Logo" class="p-2 border-b-2 border-red-500 mb-4 rounded-lg">
                 <nav class="flex flex-col space-y-4 p-2">
                     <div class="-ml-6 pl-6 flex items-center">
@@ -65,31 +65,188 @@
         </div>
 
         <div class=" items-start justify-start flex-1">
-            <header class="bg-gray-100 p-4 border-b-2 border-red-500 flex items-center w-full top-0 justify-between">
-                <h1 class="text-xl font-bold text-gray-700">Yönetim Paneli</h1>
+            <header class="bg-gray-100 p-4 border-b-2 border-red-500 flex items-center top-0 justify-between fixed top-0 left-64 right-0 z-50">
+                
+                <div>
+                    <h1 class="text-xl font-bold text-gray-700">Duyurular & Haberler</h1>
+                    <p class="text-gray-500 text-sm">Duyuruları ve haberleri yönetme ve düzenleme</p>
+                </div>
+
                 <button type="submit" class="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600">
                     Çıkış Yap
                 </button>
             </header>
 
-            <!-- Main Content -->
-            <div class="items-center justify-center grid grid-cols-4 border border-red-500 p-4 m-4 rounded-lg bg-white shadow-md">
-                <div class="p-4 m-2 bg-white rounded-lg shadow-md border border-red-500">
-                    <h2 class="text-lg font-semibold text-gray-700 mb-2">Toplam Öğrenci</h2>
-                    <p class="text-3xl font-bold text-red-500">120</p>
+            <!-- Duyuru & Haber Yönetimi -->
+            <div class="space-y-6 p-4 mt-21">
+
+                <!-- Duyuru / Haber Ekleme -->
+                <div class="bg-white border border-red-500 rounded-lg shadow p-6">
+
+                    <h3 class="text-xl font-bold text-gray-700 mb-4">
+                        Yeni İçerik Ekle
+                    </h3>
+
+                    <div class="grid grid-cols-3 gap-4">
+
+                        <div>
+                            <label class="block text-sm font-semibold mb-1">İçerik Türü</label>
+                            <select class="border rounded px-3 py-2 w-full">
+                                <option>Duyuru</option>
+                                <option>Haber</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold mb-1">Başlık</label>
+                            <input type="text" placeholder="Başlık giriniz"
+                                class="border rounded px-3 py-2 w-full">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold mb-1">Yayın Durumu</label>
+                            <select class="border rounded px-3 py-2 w-full">
+                                <option>Yayında</option>
+                                <option>Taslak</option>
+                                <option>Pasif</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold mb-1">Yayın Tarihi</label>
+                            <input type="date" class="border rounded px-3 py-2 w-full">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold mb-1">Kapak Görseli</label>
+                            <input type="file" class="border rounded px-3 py-2 w-full">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold mb-1">Öne Çıkar</label>
+                            <select class="border rounded px-3 py-2 w-full">
+                                <option>Hayır</option>
+                                <option>Evet</option>
+                            </select>
+                        </div>
+
+                        <div class="col-span-3">
+                            <label class="block text-sm font-semibold mb-1">İçerik</label>
+                            <textarea rows="5" placeholder="Duyuru veya haber içeriğini giriniz"
+                                class="border rounded px-3 py-2 w-full"></textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="mt-4">
+                        <button class="bg-red-500 text-white px-5 py-2 rounded hover:bg-red-600 transition">
+                            İçeriği Kaydet
+                        </button>
+                    </div>
+
                 </div>
-                <div class="p-4 m-2 bg-white rounded-lg shadow-md border border-red-500">
-                    <h2 class="text-lg font-semibold text-gray-700 mb-2">Toplam Sınıf</h2>
-                    <p class="text-3xl font-bold text-red-500">8</p>
+
+                <!-- Filtreleme -->
+                <div class="bg-white border border-red-500 rounded-lg shadow p-4 flex items-center justify-between">
+
+                    <div class="flex gap-3">
+                        <input type="text" placeholder="Başlık ara..."
+                            class="border rounded px-3 py-2">
+
+                        <select class="border rounded px-3 py-2">
+                            <option>Tüm İçerikler</option>
+                            <option>Duyurular</option>
+                            <option>Haberler</option>
+                        </select>
+
+                        <select class="border rounded px-3 py-2">
+                            <option>Tüm Durumlar</option>
+                            <option>Yayında</option>
+                            <option>Taslak</option>
+                            <option>Pasif</option>
+                        </select>
+                    </div>
+
+                    <button class="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800 transition">
+                        Filtrele
+                    </button>
+
                 </div>
-                <div class="p-4 m-2 bg-white rounded-lg shadow-md border border-red-500">
-                    <h2 class="text-lg font-semibold text-gray-700 mb-2">Aidat Geliri</h2>
-                    <p class="text-3xl font-bold text-red-500">₺15,000</p>
+
+                <!-- Duyuru & Haber Listesi -->
+                <div class="bg-white border border-red-500 rounded-lg shadow overflow-hidden">
+
+                    <table class="w-full text-sm">
+                        <thead class="bg-red-500 text-white">
+                            <tr>
+                                <th class="px-4 py-3 text-left">Tür</th>
+                                <th class="px-4 py-3 text-left">Başlık</th>
+                                <th class="px-4 py-3 text-left">Yayın Tarihi</th>
+                                <th class="px-4 py-3 text-left">Durum</th>
+                                <th class="px-4 py-3 text-left">Öne Çıkan</th>
+                                <th class="px-4 py-3 text-center">İşlemler</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="px-4 py-3">
+                                    <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs">
+                                        Haber
+                                    </span>
+                                </td>
+                                <td class="px-4 py-3 font-semibold text-gray-700">
+                                    Okulumuzda Bilim Fuarı Düzenlendi
+                                </td>
+                                <td class="px-4 py-3">25.04.2026</td>
+                                <td class="px-4 py-3">
+                                    <span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs">
+                                        Yayında
+                                    </span>
+                                </td>
+                                <td class="px-4 py-3">Evet</td>
+                                <td class="px-4 py-3 text-center space-x-1">
+                                    <button class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </button>
+
+                                    <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="px-4 py-3">
+                                    <span class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs">
+                                        Duyuru
+                                    </span>
+                                </td>
+                                <td class="px-4 py-3 font-semibold text-gray-700">
+                                    Veli Toplantısı Hakkında Bilgilendirme
+                                </td>
+                                <td class="px-4 py-3">24.04.2026</td>
+                                <td class="px-4 py-3">
+                                    <span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs">
+                                        Yayında
+                                    </span>
+                                </td>
+                                <td class="px-4 py-3">Hayır</td>
+                                <td class="px-4 py-3 text-center space-x-1">
+                                    <button class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </button>
+
+                                    <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
                 </div>
-                <div class="p-4 m-2 bg-white rounded-lg shadow-md border border-red-500">
-                    <h2 class="text-lg font-semibold text-gray-700 mb-2">Duyurular</h2>
-                    <p class="text-3xl font-bold text-red-500">5</p>
-                </div>
+
             </div>
 
         </div>
